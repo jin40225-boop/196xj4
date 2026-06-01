@@ -11,6 +11,7 @@ const ADMIN_NAV = [
   { to: "/admin/news", label: "最新消息", icon: "megaphone" },
   { to: "/admin/pages", label: "頁面內容", icon: "file-pen" },
   { to: "/admin/members", label: "會員管理", icon: "users-round" },
+  { to: "/admin/messages", label: "聯絡訊息", icon: "mail" },
   { to: "/admin/settings", label: "設定", icon: "settings" },
 ];
 
@@ -19,6 +20,7 @@ const TITLES: Record<string, { title: string; subtitle: string }> = {
   "/admin/news": { title: "最新消息", subtitle: "發布、編輯與管理官網的消息與招募資訊。" },
   "/admin/pages": { title: "頁面內容", subtitle: "編輯首頁、關於、聯絡等頁面的文字。" },
   "/admin/members": { title: "會員管理", subtitle: "檢視入會申請與會員繳費狀態。" },
+  "/admin/messages": { title: "聯絡訊息", subtitle: "讀者透過聯絡表單寄來的訊息。" },
   "/admin/settings": { title: "設定", subtitle: "資料管理與後台設定。" },
 };
 

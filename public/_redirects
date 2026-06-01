@@ -1,0 +1,8 @@
+# Cloudflare Pages SPA fallback.
+# Deep routes inside the admin SPA (e.g. /admin/news, /admin/pages) must
+# fall back to /admin.html so React Router can pick up the path.
+/admin/*    /admin.html   200
+
+# Block direct hits on raw HTML entry from being indexed accidentally —
+# we still serve it, just signal "this is the SPA host" via header below.
+# (Headers handled in _headers, not here.)

@@ -1,4 +1,5 @@
 // Admin SPA entry. Routes are nested under /admin/* and gated by useSession().
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "../styles/colors_and_type.css";
@@ -16,13 +17,16 @@ import Messages from "./Messages";
 import Settings from "./Settings";
 
 function AdminApp() {
+  // Hooks are called unconditionally at the top, in stable order across renders.
   const session = useSession();
   const { node: toastNode, toast } = useToast();
 
   if (!session) {
     return (
       <>
-        <Login onIn={() => {/* useSession will re-render */}} />
+        <Login onIn={() => {
+          /* useSession listens for session changes and re-renders */
+        }} />
         {toastNode}
       </>
     );
@@ -31,7 +35,7 @@ function AdminApp() {
   return (
     <>
       <Routes>
-        <Route path="/admin" element={<Shell onSignOut={() => {/* useSession re-renders */}} />}>
+        <Route path="/admin" element={<Shell onSignOut={() => { /* useSession re-renders */ }} />}>
           <Route index element={<Overview />} />
           <Route path="news" element={<NewsAdmin toast={toast} />} />
           <Route path="pages" element={<Pages toast={toast} />} />
@@ -47,7 +51,9 @@ function AdminApp() {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <AdminApp />
-  </BrowserRouter>
+  <StrictMode>
+    <BrowserRouter>
+      <AdminApp />
+    </BrowserRouter>
+  </StrictMode>
 );

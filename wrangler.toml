@@ -7,7 +7,7 @@
 #   We're on Vite 5 deliberately (smaller breaking-change surface);
 #   an explicit assets-only config sidesteps the version check.
 
-name = "whitedew-site"
+name = "196xj4"
 compatibility_date = "2025-01-01"
 
 [assets]

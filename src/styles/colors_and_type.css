@@ -1,0 +1,160 @@
+/* ============================================================
+   白露協會 White Dew — Colors & Type Foundation
+   台灣白露社會福利服務協會 Official Site Design System
+   ============================================================
+   Load Google Fonts in your HTML <head>:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Nunito:wght@400;500;600;700;800&family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet">
+   ============================================================ */
+
+:root {
+  /* ---- BRAND PALETTE: Primary (cool, calming) ---- */
+  --mint:        #91BEA9;  /* 薄荷綠  main visual, headings accent, key decoration */
+  --teal-soft:   #ADD2CC;  /* 淺青綠  block backgrounds, card fills */
+  --sky:         #BAD8E1;  /* 淺水藍  info blocks, soft backgrounds */
+  --teal-blue:   #84B9C9;  /* 柔和藍綠 CTA, footer, focal accent */
+
+  /* ---- BRAND PALETTE: Warm accents (human warmth) ---- */
+  --cream-skin:  #F3D9BE;  /* 暖米膚色 people, service warmth, soft decoration */
+  --butter:      #F5D8A1;  /* 奶油黃  highlights, small tags, attention */
+  --peach:       #F0C9A7;  /* 淡橘粉  emotional / family-support blocks */
+
+  /* ---- Tints (derived, for very-soft washes & hovers) ---- */
+  --mint-100:    #EAF2EE;
+  --sky-100:     #EDF5F8;
+  --teal-100:    #E6F1EF;
+  --butter-100:  #FCF3DF;
+  --peach-100:   #FBEEE1;
+
+  /* ---- TEXT (never pure black) ---- */
+  --ink:         #3F4D47;  /* 深灰綠  primary body text */
+  --ink-head:    #355B63;  /* 深藍綠  headings, nav */
+  --ink-muted:   #5D625F;  /* 柔灰色  secondary / captions */
+  --ink-on-dark: #F8F6F0;  /* text on teal-blue / dark fills */
+
+  /* ---- BACKGROUNDS ---- */
+  --bg:          #FFFFFF;  /* 純白  primary surface */
+  --bg-soft:     #FAFAF7;  /* 米白  section background */
+  --bg-warm:     #F8F6F0;  /* 暖灰白 long-page alternating sections */
+
+  /* ---- BORDERS / LINES ---- */
+  --line:        #E4EAE6;  /* hairline dividers, default card border */
+  --line-strong: #C9DAD3;
+
+  /* ---- SEMANTIC ROLES ---- */
+  --color-bg:            var(--bg);
+  --color-surface:       var(--bg);
+  --color-surface-soft:  var(--bg-soft);
+  --color-primary:       var(--teal-blue);   /* primary buttons / links */
+  --color-primary-ink:   #2E6470;            /* darker teal-blue for text/hover on light */
+  --color-accent:        var(--mint);
+  --color-text:          var(--ink);
+  --color-heading:       var(--ink-head);
+  --color-muted:         var(--ink-muted);
+
+  /* ============================================================
+     TYPE
+     ============================================================ */
+  --font-sans: "Nunito", "Noto Sans TC", -apple-system, "PingFang TC",
+               "Microsoft JhengHei", sans-serif;
+  --font-hand: "LXGW WenKai TC", "Nunito", serif; /* literary / quotes / poetic */
+  --font-num:  "Nunito", "Noto Sans TC", sans-serif;
+
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;  /* Nunito only; Noto falls to 500/700 */
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* Fluid type scale — generous, accessibility-minded (min body 16px) */
+  --fs-display: clamp(2.6rem, 5vw, 4rem);     /* hero */
+  --fs-h1:      clamp(2rem, 3.6vw, 2.85rem);
+  --fs-h2:      clamp(1.6rem, 2.6vw, 2.1rem);
+  --fs-h3:      clamp(1.25rem, 1.8vw, 1.5rem);
+  --fs-lead:    clamp(1.125rem, 1.4vw, 1.3rem); /* intro paragraph */
+  --fs-body:    1.0625rem;  /* 17px desktop body */
+  --fs-small:   0.9375rem;  /* 15px captions */
+  --fs-tag:     0.8125rem;
+
+  --lh-tight:   1.2;
+  --lh-snug:    1.45;
+  --lh-body:    1.85;   /* CJK comfortable reading */
+  --tracking-cjk: 0.02em;
+
+  /* ============================================================
+     SHAPE / SPACE / ELEVATION
+     ============================================================ */
+  --radius-sm:  10px;
+  --radius:     16px;   /* default card */
+  --radius-lg:  24px;   /* feature card */
+  --radius-xl:  32px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(53, 91, 99, 0.05);
+  --shadow-sm: 0 4px 14px rgba(53, 91, 99, 0.07);
+  --shadow:    0 10px 30px rgba(53, 91, 99, 0.10);
+  --shadow-lg: 0 20px 50px rgba(53, 91, 99, 0.13);
+  --shadow-glow: 0 12px 36px rgba(132, 185, 201, 0.28);
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px;
+
+  --ease: cubic-bezier(0.33, 0.8, 0.4, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 0.28s;
+
+  --maxw: 1200px;
+  --maxw-prose: 720px;
+}
+
+/* ============================================================
+   BASE ELEMENT STYLES (semantic, ready to use)
+   ============================================================ */
+.wd-scope, body.wd {
+  margin: 0;
+  background: var(--bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tracking-cjk);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wd-scope h1, .wd-scope h2, .wd-scope h3,
+.wd h1, .wd h2, .wd h3 {
+  color: var(--color-heading);
+  font-weight: var(--weight-black);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-cjk);
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+.wd-scope h1 { font-size: var(--fs-h1); }
+.wd-scope h2 { font-size: var(--fs-h2); }
+.wd-scope h3 { font-size: var(--fs-h3); font-weight: var(--weight-bold); }
+
+.wd-display { font-size: var(--fs-display); font-weight: var(--weight-black);
+  color: var(--color-heading); line-height: var(--lh-tight); letter-spacing: var(--tracking-cjk); }
+.wd-lead { font-size: var(--fs-lead); line-height: var(--lh-snug); color: var(--ink); }
+.wd-hand { font-family: var(--font-hand); }
+.wd-muted { color: var(--color-muted); }
+.wd-small { font-size: var(--fs-small); }
+
+.wd-scope p { margin: 0 0 1em; text-wrap: pretty; }
+
+.wd-scope a { color: var(--color-primary-ink); text-decoration: none; }
+.wd-scope a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Eyebrow / section kicker */
+.wd-eyebrow {
+  font-size: var(--fs-tag);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-blue);
+}

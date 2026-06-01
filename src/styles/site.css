@@ -67,9 +67,11 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------- Hero ---------- */
+/* Background wash uses rgba() to control intensity directly — lowered to keep
+   the title and lead text from being overlaid by the pastel circles. */
 .hero { position:relative; overflow:hidden; background:
-  radial-gradient(120% 90% at 85% -10%, var(--sky-100) 0%, transparent 55%),
-  radial-gradient(90% 80% at -5% 110%, var(--mint-100) 0%, transparent 50%),
+  radial-gradient(80% 70% at 92% -15%, rgba(186, 216, 225, 0.35) 0%, transparent 60%),
+  radial-gradient(70% 60% at -12% 115%, rgba(145, 190, 169, 0.28) 0%, transparent 55%),
   var(--bg-soft); }
 .hero-in { display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center;
   padding:84px 0 92px; }
@@ -85,7 +87,7 @@ img { display: block; max-width: 100%; }
 .hero-art .r1 { width:430px; height:430px; background:radial-gradient(circle at 40% 35%, #fff, var(--teal-100)); box-shadow:var(--shadow-lg); }
 .hero-art .r2 { width:320px; height:320px; border:2px dashed rgba(132,185,201,.4); }
 .hero-art img { width:300px; height:300px; position:relative; filter:drop-shadow(0 18px 40px rgba(53,91,99,.18)); }
-.blob { position:absolute; border-radius:46% 54% 58% 42% / 48% 44% 56% 52%; filter:blur(2px); opacity:.8; }
+.blob { position:absolute; border-radius:46% 54% 58% 42% / 48% 44% 56% 52%; filter:blur(8px); opacity:.32; pointer-events:none; }
 .float { animation:float 7s ease-in-out infinite; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
 @media (max-width: 860px){

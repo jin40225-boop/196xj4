@@ -1,0 +1,21 @@
+# Cloudflare Workers + Static Assets configuration.
+# Tells wrangler: this is a pure static site (no server-side Worker code),
+# just upload everything under `dist/` as edge-served assets.
+#
+# Why we have this instead of letting wrangler auto-detect:
+#   The Vite auto-config in wrangler 4.x requires Vite 6+.
+#   We're on Vite 5 deliberately (smaller breaking-change surface);
+#   an explicit assets-only config sidesteps the version check.
+
+name = "whitedew-site"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./dist"
+# When a request doesn't match any built file or _redirects rule,
+# serve index.html (this is what makes /about, /news, /contact work
+# as deep links into the React Router SPA).
+#
+# Admin deep links like /admin/news are handled by public/_redirects
+# (rewriting them to /admin.html), which wrangler honours.
+not_found_handling = "single-page-application"

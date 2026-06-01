@@ -94,14 +94,16 @@ export default function News() {
             <button className="modal-x" onClick={() => setOpen(null)} aria-label="關閉">
               <Icon name="x" />
             </button>
-            <div className="modal-tag" style={{ background: newsStyle(open.category).bg }}>
-              {open.category}
+            <div className="modal-scroll">
+              <div className="modal-tag" style={{ background: newsStyle(open.category).bg }}>
+                {open.category}
+              </div>
+              <div className="modal-date">{fmtDate(open.date)}</div>
+              <h2 className="modal-title">{open.title}</h2>
+              <p className="modal-body" style={{ whiteSpace: "pre-wrap" }}>
+                <Linkify text={open.body || open.excerpt} />
+              </p>
             </div>
-            <div className="modal-date">{fmtDate(open.date)}</div>
-            <h2 className="modal-title">{open.title}</h2>
-            <p className="modal-body" style={{ whiteSpace: "pre-wrap" }}>
-              <Linkify text={open.body || open.excerpt} />
-            </p>
           </div>
         </div>
       )}

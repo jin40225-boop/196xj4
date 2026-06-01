@@ -1,6 +1,6 @@
 // Home — circular-embrace hero, service entries, about teaser, quote band, news preview, CTA.
 import { Link } from "react-router-dom";
-import { Blob, Button, Reveal, IconTile } from "../components/ui";
+import { Button, Reveal, IconTile } from "../components/ui";
 import { Icon } from "../components/Icon";
 import { useStore } from "../lib/store";
 import { ENTRIES, newsStyle, fmtDate } from "../lib/data";
@@ -9,11 +9,11 @@ import type { NewsItem } from "../lib/types";
 function Hero() {
   const { site } = useStore();
   const h = site.hero;
+  // Decorative blobs were removed because they overlapped the hero copy on
+  // narrow viewports — the page now relies on the .hero radial-gradient wash
+  // and the embrace ring for visual texture.
   return (
     <section className="hero hero-embrace">
-      <Blob color="var(--peach-100)" w="220px" h="220px" style={{ top: "12%", left: "5%" }} />
-      <Blob color="var(--butter-100)" w="150px" h="150px" style={{ bottom: "12%", right: "10%" }} />
-      <Blob color="var(--sky-100)" w="180px" h="180px" style={{ top: "16%", right: "6%" }} />
       <div className="container hero-in">
         <div className="hero-copy">
           <div className="eyebrow">{h.eyebrow}</div>

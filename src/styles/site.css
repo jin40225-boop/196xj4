@@ -41,7 +41,8 @@ img { display: block; max-width: 100%; }
 .hdr-in { display:flex; align-items:center; gap:24px; height:78px; }
 .brand { display:flex; align-items:center; gap:12px; cursor:pointer; }
 .brand img { width:48px; height:48px; }
-.brand .zh { font-weight:900; font-size:17px; color:var(--ink-head); line-height:1.15; letter-spacing:.01em; white-space:nowrap; }
+.brand .zh { font-weight:900; font-size:15.5px; color:var(--ink-head); line-height:1.2; letter-spacing:.01em; max-width:22em; }
+@media (min-width: 1200px) { .brand .zh { font-size:16px; } }
 .brand .en { font-family:"Nunito"; font-weight:700; font-size:11px; letter-spacing:.2em;
   text-transform:uppercase; color:var(--teal-blue); }
 .nav { display:flex; gap:4px; margin-left:auto; }

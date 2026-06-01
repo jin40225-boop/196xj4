@@ -20,9 +20,9 @@ export function Header() {
     <header className="hdr">
       <div className="container hdr-in">
         <Link to="/" className="brand" onClick={close}>
-          <img src="/assets/logo-transparent.png" alt="白露協會" />
+          <img src="/assets/logo-transparent.png" alt="社團法人台灣白露社會福利服務協會" />
           <div>
-            <div className="zh">台灣白露社會福利服務協會</div>
+            <div className="zh">社團法人台灣白露社會福利服務協會</div>
             <div className="en">White Dew</div>
           </div>
         </Link>
@@ -90,13 +90,13 @@ export function Footer() {
             >
               <img
                 src="/assets/logo-transparent.png"
-                alt="白露協會"
+                alt="社團法人台灣白露社會福利服務協會"
                 style={{ width: 46, height: 46 }}
               />
             </span>
             <div>
               <div className="zh" style={{ fontWeight: 900, fontSize: 17 }}>
-                台灣白露社會福利服務協會
+                社團法人台灣白露社會福利服務協會
               </div>
               <div
                 className="en"
@@ -140,7 +140,7 @@ export function Footer() {
         </div>
       </div>
       <div className="bottom">
-        © 2025 社團法人台灣白露社會福利服務協會 Taiwan White Dew Social Welfare Service Association
+        © 2026 社團法人台灣白露社會福利服務協會 Taiwan White Dew Social Welfare Service Association
         {import.meta.env.DEV && (
           <span style={{ marginLeft: 12, opacity: 0.55 }}>· dev · {loc.pathname}</span>
         )}

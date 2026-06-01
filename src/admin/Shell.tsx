@@ -42,9 +42,11 @@ export function Shell({ onSignOut }: { onSignOut: () => void }) {
     <div className="shell">
       <aside className={"side" + (open ? " open" : "")}>
         <div className="side-brand">
-          <img src="/assets/logo-transparent.png" alt="白露" />
+          <img src="/assets/logo-transparent.png" alt="社團法人台灣白露社會福利服務協會" />
           <div>
-            <div className="zh">白露協會</div>
+            <div className="zh" style={{ fontSize: 13.5, lineHeight: 1.25 }}>
+              社團法人台灣白露社會福利服務協會
+            </div>
             <div className="en">Admin</div>
           </div>
         </div>

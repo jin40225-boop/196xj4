@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Reveal, Button } from "../components/ui";
 import { Icon } from "../components/Icon";
+import { Linkify } from "../components/Linkify";
 import { useStore } from "../lib/store";
 import { TIERS, newsStyle, fmtDate } from "../lib/data";
 import { PageHead } from "./About";
@@ -19,7 +20,7 @@ export default function News() {
       <PageHead
         kick="News & membership"
         title="最新消息：會員招募"
-        sub="台灣白露社會福利服務協會誠摯邀請您加入！歡迎個人、團體與贊助會員入會，共創美好未來。"
+        sub="社團法人台灣白露社會福利服務協會誠摯邀請您加入！歡迎個人、團體與贊助會員入會，共創美好未來。"
       />
 
       <section className="section" style={{ paddingTop: 56 }}>
@@ -99,7 +100,7 @@ export default function News() {
             <div className="modal-date">{fmtDate(open.date)}</div>
             <h2 className="modal-title">{open.title}</h2>
             <p className="modal-body" style={{ whiteSpace: "pre-wrap" }}>
-              {open.body || open.excerpt}
+              <Linkify text={open.body || open.excerpt} />
             </p>
           </div>
         </div>

@@ -29,9 +29,9 @@ export function Login({ onIn }: { onIn: () => void }) {
   return (
     <div className="login-wrap">
       <form className="login-card" onSubmit={submit}>
-        <img className="lg" src="/assets/logo-transparent.png" alt="白露" />
-        <h1>白露管理後台</h1>
-        <div className="en">White Dew · Admin</div>
+        <img className="lg" src="/assets/logo-transparent.png" alt="社團法人台灣白露社會福利服務協會" />
+        <h1 style={{ fontSize: 20, lineHeight: 1.3 }}>社團法人台灣白露社會福利服務協會</h1>
+        <div className="en" style={{ marginBottom: 28 }}>White Dew · Admin</div>
         <div className="field">
           <label>電子信箱</label>
           <input

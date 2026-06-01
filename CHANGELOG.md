@@ -1,0 +1,42 @@
+# 變更紀錄 · CHANGELOG
+
+依語意化版號（[SemVer](https://semver.org/lang/zh-TW/)）紀錄主要里程碑。
+
+## v1.0.0 — 2026-06-01
+
+第一個正式對外公開的版本。
+
+### 新增
+
+- **公開官網（5 頁）**：首頁、關於我們、服務介紹、最新消息、聯絡我們。
+- **內容管理後台（6 分頁）**：總覽、最新消息 CRUD、頁面內容編輯、會員管理、聯絡訊息、設定。
+- **資料層**：Supabase（PostgreSQL + Auth + Realtime + RLS）；前端透過 `WDStore` 統一存取。
+- **部署**：Cloudflare Workers Static Assets，連結 GitHub 自動部署。
+- **版本診斷頁** `/version`：顯示 branch / commit / built-at / 是否連線 Supabase。
+- **公開鏈接**：[https://196xj4.jin40225.workers.dev](https://196xj4.jin40225.workers.dev)
+
+### 文件
+
+- `README.md`：開發、部署、Supabase 設定、Cloudflare 設定步驟。
+- `白露官網維護手冊.docx`：10 章維運手冊，含網址速查、帳號管理、排錯流程。
+- `網站製作新手教學.docx`：7 章新手教學，講解 Supabase + Cloudflare 角色。
+
+### 設計
+
+- 完整沿用原型的設計 token（`src/styles/colors_and_type.css`）。
+- 全圓角、柔和粉彩、深青墨色調陰影、Lucide line icons。
+
+---
+
+## v1.0.1 — 2026-06-01
+
+### 修正
+
+- **全銜統一**：全站所有提到協會的地方統一使用「社團法人台灣白露社會福利服務協會」，包含 header、footer、admin 側邊欄、登入頁、SEO 標題、首頁 hero 引言。
+- **首頁色塊**：移除 Hero 區左上、右下、右上三個 pastel `<Blob>` 裝飾——它們在窄螢幕下會遮擋標題文字。
+- **內文 URL/Email 自動可點**：新增 `<Linkify>` 元件，最新消息的內文裡如果有 `https://...` 或 email，會自動變成可點連結。
+
+### 內部
+
+- `supabase/migrations/0002_full_legal_name.sql`：把線上資料庫的 `site_content` 與招募消息的 body 同步成新版文字。
+- header `.brand .zh` 樣式調整（移除 `nowrap`、降字級到 15.5/16px），讓長協會名能優雅換行。

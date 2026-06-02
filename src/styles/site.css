@@ -224,7 +224,10 @@ img { display: block; max-width: 100%; }
 /* ========== Circular-embrace hero (option B) ========== */
 .hero-copy h1 { text-wrap:balance; }
 .embrace { position:relative; display:flex; align-items:center; justify-content:center;
-  width:100%; min-height:460px; }
+  width:100%; min-height:460px;
+  /* satellite-orbit tunables — overridden per breakpoint below */
+  --orbit-r: 210px;
+  --orbit-size: 54px; }
 .embrace-ring { position:absolute; border-radius:999px; left:50%; top:50%; transform:translate(-50%,-50%); }
 .embrace .r-outer { width:466px; height:466px;
   background:radial-gradient(circle at 42% 36%, rgba(255,255,255,.9), var(--sky-100) 70%, var(--teal-100));
@@ -235,40 +238,45 @@ img { display: block; max-width: 100%; }
   background:radial-gradient(circle at 40% 35%, #fff, var(--teal-100)); }
 .embrace .embrace-logo { position:relative; width:288px; height:288px;
   filter:drop-shadow(0 18px 40px rgba(53,91,99,.20)); }
-.embrace .orbit { position:absolute; width:54px; height:54px; border-radius:999px; background:#fff;
-  box-shadow:var(--shadow-sm); display:flex; align-items:center; justify-content:center; pointer-events:none; }
-.embrace .orbit svg { width:26px; height:26px; stroke-width:1.9; }
-.embrace .o1 { top:6%; left:50%; transform:translateX(-50%); color:#4E8FA0; }
-.embrace .o2 { top:30%; right:2%; color:#5A8A74; }
-.embrace .o3 { bottom:12%; right:14%; color:#C0764A; }
-.embrace .o4 { top:34%; left:1%; color:#A9803B; }
+/* Orbits sit at four cardinal points around the embrace centre.
+   Satellite pattern: rotate the local frame, translate outward by --orbit-r,
+   then rotate the icon back so it stays upright. --orbit-r adapts per
+   breakpoint so icons stay outside the logo regardless of viewport. */
+.embrace .orbit { position:absolute; left:50%; top:50%;
+  width:var(--orbit-size); height:var(--orbit-size);
+  margin:calc(var(--orbit-size) / -2);
+  border-radius:999px; background:#fff; box-shadow:var(--shadow-sm);
+  display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.embrace .orbit svg { width:calc(var(--orbit-size) * 0.48); height:calc(var(--orbit-size) * 0.48); stroke-width:1.9; }
+.embrace .o1 { transform:rotate(-90deg) translate(var(--orbit-r)) rotate(90deg);  color:#4E8FA0; } /* top    · droplet */
+.embrace .o2 { transform:rotate(0deg)   translate(var(--orbit-r)) rotate(0deg);   color:#5A8A74; } /* right  · leaf */
+.embrace .o3 { transform:rotate(90deg)  translate(var(--orbit-r)) rotate(-90deg); color:#C0764A; } /* bottom · heart */
+.embrace .o4 { transform:rotate(180deg) translate(var(--orbit-r)) rotate(180deg); color:#A9803B; } /* left   · sparkles */
 .embrace.sm { min-height:360px; }
 .embrace.sm .embrace-core { width:300px; height:300px; box-shadow:var(--shadow-lg); }
 .embrace.sm .embrace-logo { width:236px; height:236px; }
 
-/* Tablet / large phone (≤860px): shrink the embrace so its rings stop
-   pressing into the title that sits below it in the single-column layout. */
+/* Tablet / large phone (≤860px): shrink the embrace + tighten orbit radius
+   so the four icons sit closer to the logo and no longer fly off-screen. */
 @media (max-width:860px){
-  .embrace { min-height:280px; order:-1; margin-bottom:8px; }
+  .embrace { min-height:280px; order:-1; margin-bottom:8px;
+    --orbit-r: 130px; --orbit-size: 40px; }
   .embrace .r-outer { width:240px; height:240px; opacity:.55; box-shadow:0 8px 24px rgba(53,91,99,.10); }
   .embrace .r-dash { width:200px; height:200px; opacity:.7; }
   .embrace .embrace-core { width:175px; height:175px; }
   .embrace .embrace-logo { width:160px; height:160px; }
-  .embrace .orbit { width:38px; height:38px; }
-  .embrace .orbit svg { width:18px; height:18px; }
 }
 
 /* Small phone (≤480px): drop the big gradient ring entirely so the logo
-   sits cleanly on the page background. Dashed + core + logo remain. */
+   sits cleanly on the page background. Dashed + core + logo + orbits remain. */
 @media (max-width:480px){
-  .embrace { min-height:220px; margin-bottom:4px; }
+  .embrace { min-height:220px; margin-bottom:4px;
+    --orbit-r: 118px; --orbit-size: 34px; }
   .embrace .r-outer { display:none; }
   .embrace .r-dash { width:188px; height:188px; opacity:.55; }
   .embrace .embrace-core { width:158px; height:158px; opacity:.7;
     background:radial-gradient(circle at 40% 35%, rgba(255,255,255,.85), rgba(173,210,204,.5)); }
   .embrace .embrace-logo { width:140px; height:140px; }
-  .embrace .orbit { width:34px; height:34px; }
-  .embrace .orbit svg { width:16px; height:16px; }
 }
 
 /* news card published tag */

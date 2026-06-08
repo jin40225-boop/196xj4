@@ -15,7 +15,7 @@
 - **線上網址**：<https://196xj4.jin40225.workers.dev>
 - **原始碼**：<https://github.com/jin40225-boop/196xj4>（branch `main`）
 - **本機路徑**：`C:\Users\User\projects\whitedew-site\`（**不在** OneDrive，因 node_modules 會搞掛同步）
-- **目前版本**：見 `git describe --tags`（最後一版 tag 是 `v1.0.5`）
+- **目前版本**：見 `git describe --tags`（最後一版 tag 是 `v1.0.6`）
 - **費用**：每月 NT$0（全部都在 Cloudflare + Supabase 的免費額度內）
 
 ---
@@ -247,6 +247,7 @@ $base = 'https://196xj4.jin40225.workers.dev'
 | v1.0.2 | 修最新消息 modal 手機無法捲動 |
 | v1.0.3 | 調淡首頁 hero gradient + .blob 透明度 |
 | v1.0.4 | 手機 hero embrace 圓環縮小 |
+| v1.0.6 | 官方 LINE 資料更新為 @839degei |
 | v1.0.5 | orbit 圖標重排成四個對稱位置（satellite 模式）+ 本份 HANDOFF |
 
 ---
@@ -391,4 +392,4 @@ Invoke-WebRequest -UseBasicParsing -Uri 'https://sssseazkhiswjhtmbluh.supabase.c
 
 ---
 
-*本文件版本：v1.0.5（2026-06-01）。改動時請同時更新版本與日期。*
+*本文件版本：v1.0.6（2026-06-08）。改動時請同時更新版本與日期。*

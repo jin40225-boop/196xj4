@@ -27,7 +27,7 @@ export const DEFAULT_SITE: SiteContent = {
   },
   contact: {
     email: "tw.whitedew@gmail.com",
-    line: "@whitedew · 掃描 QR 加好友",
+    line: "@839degei · 掃描 QR 加好友",
     org: "社團法人 · 非以營利為目的之公益性社會團體",
     phone: "0980-686-968",
     address: "新竹市香山區中山路 650 之 7 號 3 樓",
